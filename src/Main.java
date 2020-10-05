@@ -19,8 +19,6 @@ public class Main implements NewWindow {
         newProgram.createNewFrame(); // trying out the button
     }
 
-
-
     @Override
     public void createNewFrame() {
 
