@@ -35,7 +35,7 @@ public class InfoWindow implements NewWindow {
                 System.out.println("testing click!");
                 items.clear(); // if we don't do this then it just piles up
 
-                //then show all contents in that category!!!!!!
+                //then show all contents in that category
                 ArrayList<String> itemss = database.showCategoryItems(categories.getSelectedItem().toString());
                 //we need to attach this info to component
                 System.out.println(database.showCategoryItems(categories.getSelectedItem().toString()));
@@ -49,7 +49,7 @@ public class InfoWindow implements NewWindow {
 
 
         JList itemList = new JList(items);
-        itemList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // only one selection
+        itemList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); 
         itemList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -92,7 +92,6 @@ public class InfoWindow implements NewWindow {
         delete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // delete from the database
                 database.delete(name);
             }
         });

@@ -33,7 +33,6 @@ public class CreateForm implements NewWindow {
         JPanel formContainer = new JPanel(new GridLayout(4,2));
 
 
-//        formContainer.setPreferredSize(new Dimension(400, 400));
         JPanel buttonHolder = new JPanel();
         buttonHolder.setPreferredSize(new Dimension(400, 400));
 
@@ -53,7 +52,6 @@ public class CreateForm implements NewWindow {
         category.setLabelFor(appCategory);
         platform.setLabelFor(appPlatform);
 
-        //app name not editable
         appName.setEditable(false);
 
         //adding text fields
@@ -82,10 +80,8 @@ public class CreateForm implements NewWindow {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // call the database update function!
-                // retrieve the information form the textfields
                 database.update(appName.getText(),appCategory.getText(), appPlatform.getText());
-                formWindow.setVisible(false); //you can't see me!
+                formWindow.setVisible(false); 
                 formWindow.dispose(); //Destroy the JFrame object
             }
         });
@@ -93,7 +89,7 @@ public class CreateForm implements NewWindow {
         cancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                formWindow.setVisible(false); //you can't see me!
+                formWindow.setVisible(false); 
                 formWindow.dispose(); //Destroy the JFrame object
             }
         });
@@ -102,13 +98,7 @@ public class CreateForm implements NewWindow {
         formContainer.add(cancel);
         formContainer.add(save);
 
-
-//        buttonHolder.add(save);
-//        buttonHolder.add(cancel);
-
-        //adding it to the main frame
         formWindow.add(formContainer);
-//        formWindow.add(buttonHolder);
 
         //show the frame
         formWindow.setVisible(true);

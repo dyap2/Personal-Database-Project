@@ -59,7 +59,7 @@ public class DBConnect {
                 "VALUES ('" + name + "','" + category + "','" + platform + "')");
         try {
             Connection connect = DriverManager.getConnection(host, userName, userPass);
-            Statement stmnt = connect.createStatement(); //ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY
+            Statement stmnt = connect.createStatement(); 
             stmnt.executeUpdate(query);
 
         } catch (SQLException err) {
@@ -87,7 +87,7 @@ public class DBConnect {
                 "WHERE id=" + id);
         try {
             Connection connect = DriverManager.getConnection(host, userName, userPass);
-            Statement stmnt = connect.createStatement(); //ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY
+            Statement stmnt = connect.createStatement();
             stmnt.execute(dbQuery);
 
         } catch (SQLException err) {
@@ -159,7 +159,7 @@ public class DBConnect {
                 "    name = '" + name + "'");
 
         try {
-            results.next(); // solution to an error java.sql.SQLException: Before start of result set
+            results.next(); 
             retrieved = new Item(results.getString("name"), results.getString("category"), results.getString("platform"));
             return retrieved;
         } catch (SQLException throwables) {
@@ -173,7 +173,7 @@ public class DBConnect {
         try {
 
             Connection connect = DriverManager.getConnection(host, userName, userPass);
-            Statement stmnt = connect.createStatement(); //ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY
+            Statement stmnt = connect.createStatement(); 
             ResultSet results = stmnt.executeQuery(req);
 
 
@@ -209,7 +209,7 @@ public class DBConnect {
                 "WHERE id=" + id);
         try {
             Connection connect = DriverManager.getConnection(host, userName, userPass);
-            Statement stmnt = connect.createStatement(); //ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY
+            Statement stmnt = connect.createStatement(); 
             stmnt.execute(dbQuery);
 
         } catch (SQLException err) {
@@ -221,7 +221,7 @@ public class DBConnect {
         String dbQuery = "select id from applications where name=\"" + name + "\"";
         try {
             Connection connect = DriverManager.getConnection(host, userName, userPass);
-            Statement stmnt = connect.createStatement(); //ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY
+            Statement stmnt = connect.createStatement(); 
             return stmnt.executeQuery(dbQuery);
         } catch (SQLException err) {
             System.out.println(err.toString());
