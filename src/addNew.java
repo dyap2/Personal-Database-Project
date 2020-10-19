@@ -10,13 +10,10 @@ public class addNew implements NewWindow {
     }
     @Override
     public void createNewFrame() {
-        //JFrame
         JFrame addWindow = new JFrame("Adding something new!");
 
-        //JPANEL
         JPanel container = new JPanel(new GridLayout(4, 2));
 
-        //need 3 textfields and 3 lables
         JLabel name = new JLabel("name");
         JLabel category = new JLabel("category");
         JLabel platform = new JLabel("platform");
@@ -29,7 +26,6 @@ public class addNew implements NewWindow {
         category.setLabelFor(catField);
         platform.setLabelFor(platField);
 
-        // creating the buttons
         Button add = new Button("add!");
         Button cancel = new Button("cancel");
 
@@ -50,7 +46,6 @@ public class addNew implements NewWindow {
             }
         });
 
-        // add all the components to the screen!
         container.add(name);
         container.add(nameField);
         container.add(category);
@@ -61,11 +56,9 @@ public class addNew implements NewWindow {
         container.add(cancel);
         container.add(add);
 
-        //frame settings
         addWindow.add(container);
         addWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //window.pack();
         addWindow.setVisible(true);
         addWindow.setSize(1000, 500);
         addWindow.setResizable(false);

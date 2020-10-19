@@ -22,21 +22,15 @@ public class DBConnect {
     public DBConnect() {
 
         try {
-            // create Gson instance
             Gson gson = new Gson();
 
-            // create a reader
             Reader reader = Files.newBufferedReader(Paths.get("src/secrets.json"));
 
-            // convert JSON file to map
             Map<?, ?> map = gson.fromJson(reader, Map.class);
-
-            // print map entries
             for (Map.Entry<?, ?> entry : map.entrySet()) {
                 System.out.println(entry.getKey() + "=" + entry.getValue());
             }
 
-            // close reader
             reader.close();
 
             host = map.get("host").toString();
