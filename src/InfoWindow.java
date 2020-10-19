@@ -37,7 +37,6 @@ public class InfoWindow implements NewWindow {
 
                 //then show all contents in that category
                 ArrayList<String> itemss = database.showCategoryItems(categories.getSelectedItem().toString());
-                //we need to attach this info to component
                 System.out.println(database.showCategoryItems(categories.getSelectedItem().toString()));
 
                 // add these items into a component

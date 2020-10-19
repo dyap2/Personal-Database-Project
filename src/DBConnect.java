@@ -24,7 +24,7 @@ public class DBConnect {
         try {
             Gson gson = new Gson();
 
-            Reader reader = Files.newBufferedReader(Paths.get("src/secrets.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("./secrets.json"));
 
             Map<?, ?> map = gson.fromJson(reader, Map.class);
             for (Map.Entry<?, ?> entry : map.entrySet()) {

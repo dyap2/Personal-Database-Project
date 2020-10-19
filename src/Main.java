@@ -55,7 +55,7 @@ public class Main implements NewWindow {
         buttonsHolder.add(viewButton);
 
 
-        splitWindow.add(new JLabel(new ImageIcon("resources/humaaans.png")));
+        splitWindow.add(new JLabel(new ImageIcon("../resources/humaaans.png")));
         splitWindow.add(buttonsHolder);
 
 
