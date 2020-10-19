@@ -3,6 +3,7 @@
 out/
 resources/
 .DS_Store
+screenshots/
 *.iml
 # Compiled class file
 *.class
